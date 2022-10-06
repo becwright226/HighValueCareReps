@@ -1,0 +1,69 @@
+<template>
+    <template if:true={tasks.data}>
+        <template for:each={tasks.data} for:item="task" >
+            <a
+                href="#"
+                key={task.Id}
+                data-task-id={task.Id}
+                onclick={handleSelect}
+            >
+                <lightning-layout class="layout" title='High Value Tasks'>
+                    <lightning-layout-item class="layout-item">
+                        <lightning-icon  class="task-icon" icon-name="standard:task"></lightning-icon>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="layout-header">
+                        <h3 class="subject" > {task.Subject} </h3>
+                    </lightning-layout-item>
+                    <lightning-layout-item  class="layout-item">
+                        <p class="label">Status:</p>
+                        {task.Status}
+                    </lightning-layout-item>
+                    <br>
+                    <br>
+                    <lightning-layout-item class="layout-item">
+                        <p class="label" >Due Date:</p>
+                        <lightning-formatted-date-time
+                            value={task.ActivityDate}
+                            time-zone="UTC">
+                        </lightning-formatted-date-time>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </a>
+        </template>
+    </template>
+    <!-- <lightning-card title="High Value Opportunity Tasks" icon-name="custom:custom17">
+		<div class="slds-card__body slds-card__body_inner">
+	
+			<template if:true={tasks.data}>
+				<lightning-layout multiple-rows="true" pull-to-boundary="small">
+					<template for:each={tasks.data} for:item="task">
+						<lightning-layout-item key={task.Id} size="3" class="slds-var-p-around_x-small">
+						
+							<lightning-card title={task.Subject} class="task-tile">
+								<div class="slds-var-p-horizontal_small task-tile-body">
+									<div class="slds-media">
+										<div class="slds-media__figure">
+											<lightning-icon  class="task-icon" icon-name="standard:task"></lightning-icon>
+										</div>
+										<div class="slds-media__body">
+                                            <p class="slds-var-m-bottom_xx-small">Related Opportunity: task.WhatId </p>
+											<p class="slds-var-m-bottom_xx-small">{task.ActivityDate}</p>
+											<p class="slds-var-m-bottom_xx-small">{task.Status}</p>
+										</div>
+									</div>
+								</div>
+							</lightning-card>
+						
+						</lightning-layout-item>
+					</template>
+				</lightning-layout>
+			</template>
+		
+			<template if:true={tasks.error}>
+				<div class="slds-text-color_error">
+					An error occurred while loading the High Value Task list
+				</div>
+			</template>
+		</div>
+	</lightning-card>   -->
+</template>

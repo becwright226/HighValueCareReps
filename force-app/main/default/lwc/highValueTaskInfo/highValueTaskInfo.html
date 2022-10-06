@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="High Value Task Info" icon-name="custom:custom17">
+        <template if:true={task.data}>
+            <div class="slds-align_absolute-center">
+                <div class="slds-var-m-around_medium slds-text-align_center">
+                    
+                    <h3>{subject}</h3>
+                    <p>{status}</p>
+                    <p>
+                        <lightning-formatted-date-time
+                            value={activitydate}
+                        ></lightning-formatted-date-time>
+                    </p>
+                    <p>
+                        {owner}
+                    </p>
+                </div>
+            </div>
+        </template>
+        <template if:true={task.error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+
+        <c-view-source source="lwc/highValueTaskInfo" slot="footer">
+            Shows task details. This component is the target of the dynamic
+            interaction. It handles the event fired by the source component (see
+            highValueTaskSelector component).
+        </c-view-source>
+    </lightning-card> 
+</template>

@@ -1,0 +1,28 @@
+.layout {
+    border: var(--lwc-borderWidthThin, 1px) solid #dbf0e7;
+    border-radius: .25rem;
+    background-color: #cbf9d0;
+    padding: var(--lwc-varSpacingHorizontalSmall);
+}
+.task-icon {
+	width: 30px;
+    height: 30px;
+    margin: var(--lwc-squareIconUtilitySmall, 1rem);
+    border-radius: var(--lwc-borderRadiusLarge, 0.5rem);
+}
+.subject {
+    font-weight: bolder;
+    color: #29533e;
+}
+
+.layout-header {
+    margin: var(--lwc-varSpacingHorizontalSmall);
+}
+.label {
+    font-weight: bolder;
+    color: #29533e;
+    text-decoration: underline #29533e;
+}
+.layout-item {
+    margin: var(--lwc-varSpacingHorizontalXxSmall);
+}
